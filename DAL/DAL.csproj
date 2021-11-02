@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Model_Accesse\Model_Accesse.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Reports\" />
+  </ItemGroup>
+
 </Project>

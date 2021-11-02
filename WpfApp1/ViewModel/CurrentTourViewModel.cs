@@ -34,6 +34,7 @@ namespace UI.ViewModel
 
         private void Update()
         {
+            log.Info("Called Update CurrentTourView");
             if (SelectedTourName != null)
             {
                 string[,] tourList = DBRequests.RequestTourUpdate();
@@ -61,6 +62,7 @@ namespace UI.ViewModel
         }
         private void UpdateTours()
         {
+            log.Info("Called Tours for Combobox");
             string[,] tourList = DBRequests.RequestTourUpdate();
             AktivTours = new ObservableCollection<Tour>();
             for (int i = 0; i < (tourList.GetUpperBound(0) + 1); i++)

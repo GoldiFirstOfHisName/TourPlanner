@@ -14,7 +14,7 @@ namespace DAL
 {
     public class ReportGeneration
     {
-        private string Filepath = Path.Combine(Environment.CurrentDirectory, "Test.pdf");
+        private string Filepath = Path.Combine(Environment.CurrentDirectory, "temp\\Test.pdf");
         private Color background = WebColors.GetRGBColor("#D3D3D3");
 
         public ReportGeneration()

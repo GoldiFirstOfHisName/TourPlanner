@@ -53,6 +53,7 @@ namespace Tourplanner.ViewModel
 
         private void Update()
         {
+            log.Info("Called Update TourViewUpdate");
             string[,] tourList = DBRequests.RequestTourUpdate();
             Tours = new ObservableCollection<Tour>();
             for (int i = 0; i < (tourList.GetUpperBound(0) + 1); i++)
@@ -149,8 +150,8 @@ namespace Tourplanner.ViewModel
             try
             {
                 AddTourPressed();
-            }
-            catch (Exception e)
+            }//Exception
+            catch (InputIsEmptyexception e)
             {
                 log.Error(e, "Error during Tour Add");
             }
@@ -199,7 +200,7 @@ namespace Tourplanner.ViewModel
             {
                 EditTourPressed();
             }
-            catch (Exception e)
+            catch (InputIsEmptyexception e)// Why in fucking fucks name are these blocks not catching?
             {
 
                 log.Error(e, "Error during Tour Add");

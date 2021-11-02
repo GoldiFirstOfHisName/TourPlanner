@@ -33,6 +33,7 @@ namespace UI.ViewModel
 
         private void Update()
         {
+            log.Info("Called Update TourLogViewUpdate");
             if (SelectedTourName != null)
             {
                 addLog.Name = SelectedTourName;
@@ -64,6 +65,7 @@ namespace UI.ViewModel
         }
         private void UpdateTours()
         {
+            log.Info("Called Tours for Combobox");
             string[,] tourList = DBRequests.RequestTourUpdate();
             AktivTours = new ObservableCollection<Tour>();
             for (int i = 0; i < (tourList.GetUpperBound(0) + 1); i++)
@@ -129,7 +131,7 @@ namespace UI.ViewModel
             {
                 AddLogPressed();
             }
-            catch (Exception e)
+            catch (InputIsEmptyexception e)
             {
                 log.Error(e, "Error during Log Add");
             }
@@ -191,7 +193,7 @@ namespace UI.ViewModel
                 SelectedLogs = addLog;
                 EditLogPressed();
             }
-            catch (Exception e)
+            catch (InputIsEmptyexception e)
             {
                 log.Error(e, "Error during Log Edit");
             }
